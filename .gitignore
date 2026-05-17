@@ -1,0 +1,21 @@
+# Python (Compiler files)
+__pycache__/
+*.pyc
+
+# Django local database
+db.sqlite3
+
+# Environment variables (Sensitive Data)
+.env
+
+# Virtual Environments
+venv/
+env/
+.venv/
+
+# Editor settings
+.vscode/
+
+# Logs and Media
+*.log
+media/
