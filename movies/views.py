@@ -6,6 +6,6 @@ from .models import Movie, Genre
 # say_hello ဆိုတဲ့ function တစ်ခု ဆောက်လိုက်တာပါ (နာမည်ကြိုက်တာပေးလို့ရတယ်)
 def say_hello(request):
     movies = Movie.objects.all()  # Movie model ထဲက အားလုံးကို ရယူပါ
-    # ရုပ်ရှင်နာမည်တွေကို comma နဲ့ ခွဲပြီး string ပြောင်းပါ
-    output = ', '.join([movie.title for movie in movies])
-    return HttpResponse(output)  # HTTP response အဖြစ် ရုပ်ရှင်
+    genres = Genre.objects.all()  # Genre model ထဲက အားလုံးကို ရယူပါ
+    # movies/index.html ကို render လုပ်ပြီး movies နဲ့ genres ကို context အဖြစ်ပေးပါ
+    return render(request, 'movies/index.html', {'movies': movies, 'genres': genres})
