@@ -9,3 +9,10 @@ def say_hello(request):
     genres = Genre.objects.all()  # Genre model ထဲက အားလုံးကို ရယူပါ
     # movies/index.html ကို render လုပ်ပြီး movies နဲ့ genres ကို context အဖြစ်ပေးပါ
     return render(request, 'movies/index.html', {'movies': movies, 'genres': genres})
+
+
+def movie_detail(request, movie_id):
+    # movie_id နဲ့ ကိုက်တဲ့ Movie ကို ရယူပါ
+    movie = Movie.objects.get(id=movie_id)
+    # movies/detail.html ကို render လုပ်ပြီး movie ကို context အဖြစ်ပေးပါ
+    return render(request, 'movies/detail.html', {'movie': movie})
