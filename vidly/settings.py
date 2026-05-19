@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'movies.apps.MoviesConfig',  # movies app ကို INSTALLED_APPS မှာ ထည့်တာပါ
+    'api.apps.ApiConfig',  # api app ကို INSTALLED_APPS မှာ ထည့်တာပါ
 ]
 
 MIDDLEWARE = [

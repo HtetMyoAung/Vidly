@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render, get_object_or_404
+from django.http import HttpResponse, Http404
 from .models import Movie, Genre
 
 
@@ -12,7 +12,7 @@ def say_hello(request):
 
 
 def movie_detail(request, movie_id):
-    # movie_id နဲ့ ကိုက်တဲ့ Movie ကို ရယူပါ
-    movie = Movie.objects.get(id=movie_id)
+   # movie_id နဲ့ ကိုက်ညီတဲ့ Movie object ကို ရယူပါ။ မတွေ့ရင် 404 error ပြပါ
+    movie = get_object_or_404(Movie, id=movie_id)
     # movies/detail.html ကို render လုပ်ပြီး movie ကို context အဖြစ်ပေးပါ
     return render(request, 'movies/detail.html', {'movie': movie})
