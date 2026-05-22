@@ -57,7 +57,7 @@ ROOT_URLCONF = 'vidly.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        # templates ဖိုလ်ဒါကို DIRS မှာ ထည့်တာပါ
+        # add the templates directory to the TEMPLATES setting
         'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
